@@ -38,12 +38,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %attr(755,root,root) %{_bindir}/*
-
-%changelog
-* Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [2.03.1-1]
-- changed base Source url.
-
-* Sun Oct 4 1998 Piotr Grochowski <pager@dione.ids.pl>
-  [2.01-1]
-- First relase as a PLD package.
