@@ -1,7 +1,7 @@
 Summary:     unRAR - extract, test and view RAR archives.
 Summary(pl): unRAR - rozpakowuje, testuje i przegl±da archiwa RAR.
 Name:        unrar
-Version:     2.03.1
+Version:     2.50
 Release:     1
 Copyright:   Freeware
 Group:       Utilities/Archiving
