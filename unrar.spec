@@ -4,14 +4,13 @@ Summary(pt_BR):	Descompressor de arquivos no formato .rar
 Summary(ru):	Распаковщик файлов .zip
 Summary(uk):	Розпаковувач файл╕в .zip
 Name:		unrar
-Version:	3.1.0
-Release:	2
+Version:	3.1.3
+Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
-Patch0:		%{name}-makefile.patch
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,10 +45,9 @@ PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
 
 %prep
 %setup -q -n unrar
-%patch0 -p1
 
 %build
-%{__make} -f makefile.gcc CC=%{__cc} CXX=%{__cxx} OPT="%{rpmcflags}"
+%{__make} -f makefile.unix CC=%{__cc} CXX=%{__cxx} CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
