@@ -9,6 +9,7 @@ Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
+# Source0-md5: f0a55e2666061f315aec04994f79ff45
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 BuildRequires:	libstdc++-devel
