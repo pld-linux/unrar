@@ -27,7 +27,7 @@ wersji 1.50 i wy¿szej.
 sed 's/^CFLAGS[ ]*=/override CFLAGS +=/' < Makefile > Makefile.new
 mv -f Makefile.new Makefile
 %{__make} clean
-%{__make} CFLAGS=$RPM_OPT_FLAGS 
+%{__make} CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
