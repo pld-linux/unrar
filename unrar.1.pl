@@ -1,3 +1,6 @@
+.\" 
+.\" Translation (c) Wojciech Aleksander <walx@polbox.com>
+.\" 
 .TH UNRAR 1 "11 lutego 1999" 
 .SH NAZWA
 unrar \- rozpakowuje pliki z archiwów rar
@@ -9,7 +12,7 @@ Ten podrêcznik po krótce opisuje polecenie
 .BR unrar
 .br
 Podrêcznik ten zosta³ napisany dla dystrubucji Debian GNU/Linux 
-poniewa¿ oryginalny program nie posiada stron podrêcznika man.
+poniewa¿ oryginalny program nie posiada stron podrêcznika systemowego.
 .br
 
 Polecenia i opcje opisane tutaj dotycz± wersji unrar 2.02.
