@@ -5,7 +5,7 @@ Summary(ru):	Распаковщик файлов .zip
 Summary(uk):	Розпаковувач файл╕в .zip
 Name:		unrar
 Version:	3.1.0
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Archiving
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
@@ -57,7 +57,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
 
 install unrar $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
-install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1
+install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/unrar.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
