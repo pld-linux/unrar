@@ -1,11 +1,12 @@
-Summary:     unRAR - extract, test and view RAR archives.
-Summary(pl): unRAR - rozpakowuje, testuje i przegl±da archiwa RAR.
-Name:        unrar
-Version:     2.50
-Release:     1
-Copyright:   Freeware
-Group:       Utilities/Archiving
-Source:      ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
+Summary:	unRAR - extract, test and view RAR archives.
+Summary(pl):	unRAR - rozpakowuje, testuje i przegl±da archiwa RAR.
+Name:		unrar
+Version:	2.50
+Release:	1
+Copyright:	Freeware
+Group:		Utilities/Archiving
+Group(pl):	Narzêdzia/Archiwizacja
+Source:		ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -25,14 +26,14 @@ archiwów stworzonych przez program RAR w wersji 1.50 i wy¿szej.
 cd src
 make
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
 install -s src/unrar $RPM_BUILD_ROOT%{_bindir}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %attr(755,root,root) %{_bindir}/*
