@@ -2,12 +2,14 @@ Summary:	unRAR - extract, test and view RAR archives
 Summary(pl):	unRAR - rozpakowuje, testuje i przegl±da archiwa RAR
 Name:		unrar
 Version:	2.71
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Archiving
 Group(de):	Applikationen/Archivierung
 Group(pl):	Aplikacje/Archiwizacja
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
+Source1:	%{name}.1
+Source2:	%{name}.1.pl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -30,9 +32,11 @@ wersji 1.50 i wy¿szej.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
 
 install unrar $RPM_BUILD_ROOT%{_bindir}
+install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
+install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1
 gzip -9nf *.txt
 
 %clean
@@ -41,4 +45,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.txt.gz 
+%{_mandir}/man1/*
+%lang(pl) %{_mandir}/pl/man1/*
 %attr(755,root,root) %{_bindir}/*
