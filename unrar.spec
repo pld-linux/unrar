@@ -8,7 +8,7 @@ Version:	3.1.0
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
-Source0:	http://www.rarlab.com/rar/%{name}src.tar.gz
+Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 Patch0:		%{name}-makefile.patch
@@ -46,9 +46,9 @@ PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
 або умовчання в╕др╕зняються.
 
 %prep
-%setup -q -c
+%setup -q -n unrar
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
 %{__make} -f makefile.gcc CC=%{__cc} CXX=%{__cxx} OPT="%{rpmcflags}"
