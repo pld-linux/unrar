@@ -4,8 +4,9 @@ Name:		unrar
 Version:	2.71
 Release:	1
 License:	Freeware
-Group:		Utilities/Archiving
-Group(pl):	Narzêdzia/Archiwizacja
+Group:		Applications/Archiving
+Group(de):	Applikationen/Archivierung
+Group(pl):	Aplikacje/Archiwizacja
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,7 +26,7 @@ wersji 1.50 i wy¿szej.
 
 %build
 %{__make} clean
-%{__make} CFLAGS="-D_UNIX $RPM_OPT_FLAGS"
+%{__make} CFLAGS="-D_UNIX %{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
