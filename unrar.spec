@@ -5,8 +5,6 @@ Version:	2.71
 Release:	2
 License:	Freeware
 Group:		Applications/Archiving
-Group(de):	Applikationen/Archivierung
-Group(pl):	Aplikacje/Archiwizacja
 Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
