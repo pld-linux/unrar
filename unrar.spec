@@ -1,11 +1,11 @@
 Summary:     unRAR - extract, test and view RAR archives.
 Summary(pl): unRAR - rozpakowuje, testuje i przegl±da archiwa RAR.
 Name:        unrar
-Version:     2.01
-Release:     1d
+Version:     2.03.1
+Release:     1
 Copyright:   Freeware
 Group:       Utilities/Archiving
-Source:      ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Archivers/%{name}-%{version}.tar.gz
+Source:      ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
 BuildRoot:   /tmp/%{name}-%{version}-root
 
 %description
@@ -38,6 +38,10 @@ install -s src/unrar $RPM_BUILD_ROOT/usr/bin
 %attr(755,root,root) /usr/bin/*
 
 %changelog
+* Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [2.03.1-1]
+- changed base Source url.
+
 * Sun Oct 4 1998 Piotr Grochowski <pager@dione.ids.pl>
-  [2.01]
+  [2.01-1]
 - First relase as a PLD package.
