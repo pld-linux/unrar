@@ -1,0 +1,18 @@
+diff -urN unrar.org/makefile.gcc unrar/makefile.gcc
+--- unrar.org/makefile.gcc	Fri May 31 23:56:25 2002
++++ unrar/makefile.gcc	Fri May 31 23:56:57 2002
+@@ -1,10 +1,12 @@
+ UNRARFILES=filestr.cpp recvol.cpp rs.cpp scantree.cpp
+ FILES=rar.cpp strlist.cpp strfn.cpp pathfn.cpp int64.cpp savepos.cpp global.cpp file.cpp filefn.cpp filcreat.cpp archive.cpp arcread.cpp unicode.cpp system.cpp isnt.cpp crypt.cpp crc.cpp rawread.cpp encname.cpp resource.cpp match.cpp timefn.cpp rdwrfn.cpp consio.cpp options.cpp ulinks.cpp errhnd.cpp rarvm.cpp rijndael.cpp getbits.cpp sha1.cpp extinfo.cpp extract.cpp volume.cpp list.cpp find.cpp unpack.cpp cmddata.cpp
+ 
++OPT = -O2
++
+ makeunrar:	
+-	c++ -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DUNRAR -w -O2 -o unrar $(FILES) $(UNRARFILES)
++	$(CXX) -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DUNRAR -w $(OPT) -o unrar $(FILES) $(UNRARFILES)
+ 	strip unrar
+ 
+ makesfx:
+-	c++ -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DUNRAR -DSFX_MODULE -w -O2 -o default.sfx $(FILES)
++	$(CXX) -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DUNRAR -DSFX_MODULE -w $(OPT) -o default.sfx $(FILES)
+ 	strip default.sfx
