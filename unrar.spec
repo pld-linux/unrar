@@ -30,12 +30,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/bin
+install -d $RPM_BUILD_ROOT%{_bindir}
 
-install -s src/unrar $RPM_BUILD_ROOT/usr/bin
+install -s src/unrar $RPM_BUILD_ROOT%{_bindir}
 
 %files
-%attr(755,root,root) /usr/bin/*
+%attr(755,root,root) %{_bindir}/*
 
 %changelog
 * Sat Nov 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
