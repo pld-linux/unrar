@@ -2,7 +2,7 @@ Summary:	unRAR - extract, test and view RAR archives
 Summary(pl):	unRAR - rozpakowuje, testuje i przegl±da archiwa RAR
 Name:		unrar
 Version:	2.50.1
-Release:	2
+Release:	3
 License:	Freeware
 Group:		Utilities/Archiving
 Group(pl):	Narzêdzia/Archiwizacja
@@ -24,10 +24,8 @@ wersji 1.50 i wy¿szej.
 %setup -q
 
 %build
-sed 's/^CFLAGS[ ]*=/override CFLAGS +=/' < Makefile > Makefile.new
-mv -f Makefile.new Makefile
 %{__make} clean
-%{__make} CFLAGS="$RPM_OPT_FLAGS"
+%{__make} CFLAGS="-D_UNIX $RPM_OPT_FLAGS"
 
 %install
 rm -rf $RPM_BUILD_ROOT
