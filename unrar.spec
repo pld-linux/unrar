@@ -7,7 +7,7 @@ Copyright:	Freeware
 Group:		Utilities/Archiving
 Group(pl):	Narzêdzia/Archiwizacja
 Source:		ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The unRAR utility is a freeware program, distributed with source code and
