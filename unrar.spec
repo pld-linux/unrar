@@ -25,7 +25,7 @@ archiwów stworzonych przez program RAR w wersji 1.50 i wy¿szej.
 rm -f unrar
 
 %build
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
