@@ -1,0 +1,12 @@
+diff -Nru unrar.orig/array.hpp unrar/array.hpp
+--- unrar.orig/array.hpp	2003-05-15 08:38:00.000000000 +0000
++++ unrar/array.hpp	2003-06-09 09:49:49.000000000 +0000
+@@ -1,6 +1,8 @@
+ #ifndef _RAR_ARRAY_
+ #define _RAR_ARRAY_
+ 
++#include "global.hpp"
++
+ template <class T> class Array
+ {
+   private:
