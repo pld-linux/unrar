@@ -4,13 +4,13 @@ Summary(pt_BR):	Descompressor de arquivos no formato .rar
 Summary(ru):	Распаковщик файлов .zip
 Summary(uk):	Розпаковувач файл╕в .zip
 Name:		unrar
-Version:	3.4.1
+Version:	3.4.2
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: http://www.rarlab.com/rar_add.htm
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5:	51d2a7b2f67b09302872a0b3a2f56377
+# Source0-md5:	92c5fe5a915780264fb1297eafb9d273
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 Patch0:		%{name}-include.patch
