@@ -1,13 +1,15 @@
 Summary:	unRAR - extract, test and view RAR archives
 Summary(pl):	unRAR - rozpakowuje, testuje i przegl±da archiwa RAR
 Name:		unrar
-Version:	2.71
-Release:	2
+Version:	3.00
+Release:	1
 License:	Freeware
 Group:		Applications/Archiving
-Source0:	ftp://sunsite.unc.edu/pub/Linux/utils/compress/%{name}-%{version}.tar.gz
+Source0:	http://www.rarlab.com/rar/%{name}src.tar.gz
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
+Patch0:		%{name}-makefile.patch
+BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -22,11 +24,11 @@ przegl±dania zawarto¶ci archiwów stworzonych przez program RAR w
 wersji 1.50 i wy¿szej.
 
 %prep
-%setup -q
+%setup -q -c
+%patch0 -p1
 
 %build
-%{__make} clean
-%{__make} CFLAGS="-D_UNIX %{rpmcflags}"
+%{__make} -f makefile.gcc CC=%{__cc} CXX=%{__cxx} OPT="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
