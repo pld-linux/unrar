@@ -26,13 +26,13 @@ wersji 1.50 i wy¿szej.
 
 %build
 %{__make} clean
-%{__make} CFLAGS="-D_UNIX %{!?debug:$RPM_OPT_FLAGS}%{?debug:-O0 -g}"
+%{__make} CFLAGS="-D_UNIX %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install -s unrar $RPM_BUILD_ROOT%{_bindir}
+install unrar $RPM_BUILD_ROOT%{_bindir}
 gzip -9nf *.txt
 
 %clean
