@@ -23,16 +23,18 @@ wersji 1.50 i wy¿szej.
 %prep
 %setup -q
 
-rm -f unrar
-
 %build
-%{__make}
+sed 's/^CFLAGS[ ]*=/override CFLAGS +=/' < Makefile > Makefile.new
+mv -f Makefile.new Makefile
+%{__make} clean
+%{__make} CFLAGS=$RPM_OPT_FLAGS 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
 install -s unrar $RPM_BUILD_ROOT%{_bindir}
+gzip -9nf *.txt *.lsm
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -40,3 +42,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%doc *.txt.gz *.lsm.gz
