@@ -22,15 +22,16 @@ archiwów stworzonych przez program RAR w wersji 1.50 i wy¿szej.
 %prep
 %setup -q
 
+rm -f unrar
+
 %build
-cd src
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_bindir}
 
-install -s src/unrar $RPM_BUILD_ROOT%{_bindir}
+install -s unrar $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
