@@ -1,0 +1,18 @@
+--- unrar-3.00/rartypes.hpp.orig	Tue May 14 14:41:23 2002
++++ unrar-3.00/rartypes.hpp	Sun Oct 13 16:33:41 2002
+@@ -8,7 +8,7 @@
+ typedef unsigned int     uint32; //32 bits exactly
+ #define PRESENT_INT32
+ 
+-#ifdef _WIN_32
++#if defined(_WIN_32) || (defined(__GNUC__) && __GNUC__ >= 3)
+ typedef wchar_t wchar;
+ #elif defined(__GNUC__)
+ typedef __wchar_t wchar;
+@@ -18,4 +18,4 @@
+ 
+ #define SHORT16(x) (sizeof(ushort)==2 ? (ushort)(x):((x)&0xffff))
+ 
+-#endif
+\ No newline at end of file
++#endif

@@ -5,14 +5,15 @@ Summary(ru):	Распаковщик файлов .zip
 Summary(uk):	Розпаковувач файл╕в .zip
 Name:		unrar
 Version:	3.00
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Archiving
 Source0:	http://www.rarlab.com/rar/%{name}src.tar.gz
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 Patch0:		%{name}-makefile.patch
-BuildRequires:	gcc-c++
+Patch1:		%{name}-gcc3.patch
+BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -47,6 +48,7 @@ PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
 %prep
 %setup -q -c
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -f makefile.gcc CC=%{__cc} CXX=%{__cxx} OPT="%{rpmcflags}"
@@ -58,14 +60,13 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
 install unrar $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
 install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1
-gzip -9nf *.txt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.txt.gz
+%doc *.txt
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %attr(755,root,root) %{_bindir}/*
