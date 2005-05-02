@@ -16,6 +16,7 @@ Source2:	%{name}.1.pl
 Patch0:		%{name}-include.patch
 URL:		http://www.rarlab.com/
 BuildRequires:	libstdc++-devel
+BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -52,7 +53,10 @@ PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
 %patch0 -p1
 
 %build
-%{__make} -f makefile.unix CC=%{__cc} CXX=%{__cxx} CXXFLAGS="%{rpmcxxflags}"
+%{__make} -f makefile.unix \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcxxflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
