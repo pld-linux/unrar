@@ -5,7 +5,7 @@ Summary(ru):	Распаковщик файлов .zip
 Summary(uk):	Розпаковувач файл╕в .zip
 Name:		unrar
 Version:	3.5.2
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: http://www.rarlab.com/rar_add.htm
