@@ -1,8 +1,8 @@
 Summary:	unRAR - extract, test and view RAR archives
-Summary(pl):	unRAR - rozpakowuje, testuje i przegl╠da archiwa RAR
-Summary(pt_BR):	Descompressor de arquivos no formato .rar
-Summary(ru):	Распаковщик файлов .zip
-Summary(uk):	Розпаковувач файл╕в .zip
+Summary(pl.UTF-8):   unRAR - rozpakowuje, testuje i przeglд┘da archiwa RAR
+Summary(pt_BR.UTF-8):   Descompressor de arquivos no formato .rar
+Summary(ru.UTF-8):   п═п╟я│п©п╟п╨п╬п╡я┴п╦п╨ я└п╟п╧п╩п╬п╡ .zip
+Summary(uk.UTF-8):   п═п╬п╥п©п╟п╨п╬п╡я┐п╡п╟я┤ я└п╟п╧п╩я√п╡ .zip
 Name:		unrar
 Version:	3.7.3
 Release:	1
@@ -23,29 +23,29 @@ The unRAR utility is a freeware program, distributed with source code
 and developed for extracting, testing and viewing the contents of
 archives created with the RAR archiver version 1.50 and above.
 
-%description -l pl
+%description -l pl.UTF-8
 UnRAR jest programem freeware, rozpowszechnianym wraz z kodem
-╪rСdЁowym, przeznaczonym do rozpakowywania, testowania oraz
-przegl╠dania zawarto╤ci archiwСw stworzonych przez program RAR w
-wersji 1.50 i wy©szej.
+е╨rцЁdе┌owym, przeznaczonym do rozpakowywania, testowania oraz
+przeglд┘dania zawartoе⌡ci archiwцЁw stworzonych przez program RAR w
+wersji 1.50 i wyе╪szej.
 
-%description -l pt_BR
-O programa unrar И utilizado para descompactar arquivos no formato
+%description -l pt_BR.UTF-8
+O programa unrar ц╘ utilizado para descompactar arquivos no formato
 ".rar".
 
-%description -l ru
-Unzip выдает список, проверяет целостность и извлекает файлы из
-архивов ZIP, довольно широко распространенных в мире DOS.
-Сопутствующая программа, zip, создает архивы ZIP. Обе программы
-совместимы с архивами созданными PKZIP и PKUNZIP от PKWARE для MS-DOS,
-но во многих случаях опции или умолчания отличаются.
+%description -l ru.UTF-8
+Unzip п╡я▀п╢п╟п╣я┌ я│п©п╦я│п╬п╨, п©я─п╬п╡п╣я─я▐п╣я┌ я├п╣п╩п╬я│я┌п╫п╬я│я┌я▄ п╦ п╦п╥п╡п╩п╣п╨п╟п╣я┌ я└п╟п╧п╩я▀ п╦п╥
+п╟я─я┘п╦п╡п╬п╡ ZIP, п╢п╬п╡п╬п╩я▄п╫п╬ я┬п╦я─п╬п╨п╬ я─п╟я│п©я─п╬я│я┌я─п╟п╫п╣п╫п╫я▀я┘ п╡ п╪п╦я─п╣ DOS.
+п║п╬п©я┐я┌я│я┌п╡я┐я▌я┴п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟, zip, я│п╬п╥п╢п╟п╣я┌ п╟я─я┘п╦п╡я▀ ZIP. п·п╠п╣ п©я─п╬пЁя─п╟п╪п╪я▀
+я│п╬п╡п╪п╣я│я┌п╦п╪я▀ я│ п╟я─я┘п╦п╡п╟п╪п╦ я│п╬п╥п╢п╟п╫п╫я▀п╪п╦ PKZIP п╦ PKUNZIP п╬я┌ PKWARE п╢п╩я▐ MS-DOS,
+п╫п╬ п╡п╬ п╪п╫п╬пЁп╦я┘ я│п╩я┐я┤п╟я▐я┘ п╬п©я├п╦п╦ п╦п╩п╦ я┐п╪п╬п╩я┤п╟п╫п╦я▐ п╬я┌п╩п╦я┤п╟я▌я┌я│я▐.
 
-%description -l uk
-Unzip вида╓ перел╕к, перев╕ря╓ ц╕л╕сн╕сть та видобува╓ файли з арх╕в╕в
-ZIP, досить широко розповсюджених у св╕т╕ DOS. В╕дпов╕дна програма,
-zip, створю╓ арх╕ви ZIP. Обидв╕ програми сум╕сн╕ з арх╕вами створеними
-PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
-або умовчання в╕др╕зняються.
+%description -l uk.UTF-8
+Unzip п╡п╦п╢п╟я■ п©п╣я─п╣п╩я√п╨, п©п╣я─п╣п╡я√я─я▐я■ я├я√п╩я√я│п╫я√я│я┌я▄ я┌п╟ п╡п╦п╢п╬п╠я┐п╡п╟я■ я└п╟п╧п╩п╦ п╥ п╟я─я┘я√п╡я√п╡
+ZIP, п╢п╬я│п╦я┌я▄ я┬п╦я─п╬п╨п╬ я─п╬п╥п©п╬п╡я│я▌п╢п╤п╣п╫п╦я┘ я┐ я│п╡я√я┌я√ DOS. п▓я√п╢п©п╬п╡я√п╢п╫п╟ п©я─п╬пЁя─п╟п╪п╟,
+zip, я│я┌п╡п╬я─я▌я■ п╟я─я┘я√п╡п╦ ZIP. п·п╠п╦п╢п╡я√ п©я─п╬пЁя─п╟п╪п╦ я│я┐п╪я√я│п╫я√ п╥ п╟я─я┘я√п╡п╟п╪п╦ я│я┌п╡п╬я─п╣п╫п╦п╪п╦
+PKZIP я┌п╟ PKUNZIP п╡я√п╢ PKWARE п╢п╩я▐ MS-DOS, п╟п╩п╣ п╡ п╠п╟пЁп╟я┌я▄п╬я┘ п╡п╦п©п╟п╢п╨п╟я┘ п╬п©я├я√я≈
+п╟п╠п╬ я┐п╪п╬п╡я┤п╟п╫п╫я▐ п╡я√п╢я─я√п╥п╫я▐я▌я┌я▄я│я▐.
 
 %prep
 %setup -q -n unrar
