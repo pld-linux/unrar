@@ -1,8 +1,8 @@
 Summary:	unRAR - extract, test and view RAR archives
-Summary(pl.UTF-8):   unRAR - rozpakowuje, testuje i przegląda archiwa RAR
-Summary(pt_BR.UTF-8):   Descompressor de arquivos no formato .rar
-Summary(ru.UTF-8):   Распаковщик файлов .zip
-Summary(uk.UTF-8):   Розпаковувач файлів .zip
+Summary(pl.UTF-8):	unRAR - rozpakowuje, testuje i przegląda archiwa RAR
+Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
+Summary(ru.UTF-8):	Распаковщик файлов .zip
+Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
 Version:	3.7.3
 Release:	1
