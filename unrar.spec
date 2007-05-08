@@ -90,7 +90,7 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/{man1,pl/man1}}
 
 install unrar $RPM_BUILD_ROOT%{_bindir}
 install libunrar.so $RPM_BUILD_ROOT%{_libdir}/libunrar.so.%{version}
-ln -s linunrar.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libunrar.so
+ln -s libunrar.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libunrar.so
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
 install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/unrar.1
 
