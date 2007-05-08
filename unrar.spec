@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
 Version:	3.7.5
-Release:	1
+Release:	1.1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: http://www.rarlab.com/rar_add.htm
@@ -17,6 +17,9 @@ URL:		http://www.rarlab.com/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# -fPIC for other archs too ?
+%define	specflags_x86_64 -fPIC
 
 %description
 The unRAR utility is a freeware program, distributed with source code
@@ -47,20 +50,47 @@ zip, створює архіви ZIP. Обидві програми сумісн
 PKZIP та PKUNZIP від PKWARE для MS-DOS, але в багатьох випадках опції
 або умовчання відрізняються.
 
+%package -n libunrar
+Summary:	Library for extracting RAR archive
+Group:		Libraries
+
+%description -n libunrar
+Library for extracting RAR archive.
+
+%package -n libunrar-devel
+Summary:	Development files for libunrar
+Group:		Development/Libraries
+Requires:	libunrar = %{version}-%{release}
+
+%description -n libunrar-devel
+Development files for libunrar.
+
 %prep
 %setup -q -n unrar
 
 %build
+install -d done
+%{__make} -f makefile.unix clean
 %{__make} -f makefile.unix \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CXXFLAGS="%{rpmcxxflags}"
+	CXXFLAGS="%{rpmcxxflags}" \
+	STRIP=":"
+%{__make} -f makefile.unix clean
+%{__make} -f makefile.unix lib \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcxxflags}" \
+	LDFLAGS="%{rpmldflags} -Wl,-soname -Wl,libunrar.so.%{version}" \
+	STRIP=":"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/{man1,pl/man1}}
 
 install unrar $RPM_BUILD_ROOT%{_bindir}
+install libunrar.so $RPM_BUILD_ROOT%{_libdir}/libunrar.so.%{version}
+ln -s linunrar.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libunrar.so
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
 install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/unrar.1
 
@@ -73,3 +103,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
 %attr(755,root,root) %{_bindir}/*
+
+%files -n libunrar
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libunrar.so.*.*
+
+%files -n libunrar-devel
+%defattr(644,root,root,755)
+%{_libdir}/libunrar.so
