@@ -18,9 +18,6 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-# -fPIC for other archs too ?
-%define	specflags_x86_64 -fPIC
-
 %description
 The unRAR utility is a freeware program, distributed with source code
 and developed for extracting, testing and viewing the contents of
@@ -52,18 +49,26 @@ PKZIP та PKUNZIP від PKWARE для MS-DOS, але в багатьох ви�
 
 %package -n libunrar
 Summary:	Library for extracting RAR archive
+Summary(pl.UTF-8):	Biblioteka do rozpakowywania archiwów RAR
 Group:		Libraries
 
 %description -n libunrar
 Library for extracting RAR archive.
 
+%description -n libunrar -l pl.UTF-8
+Biblioteka do rozpakowywania archiwów RAR.
+
 %package -n libunrar-devel
 Summary:	Development files for libunrar
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki libunrar
 Group:		Development/Libraries
 Requires:	libunrar = %{version}-%{release}
 
 %description -n libunrar-devel
 Development files for libunrar.
+
+%description -n libunrar-devel -l pl.UTF-8
+Pliki programistyczne biblioteki libunrar.
 
 %prep
 %setup -q -n unrar
@@ -80,7 +85,7 @@ install -d done
 %{__make} -f makefile.unix lib \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CXXFLAGS="%{rpmcxxflags}" \
+	CXXFLAGS="%{rpmcxxflags} -fPIC" \
 	LDFLAGS="%{rpmldflags} -Wl,-soname -Wl,libunrar.so.%{version}" \
 	STRIP=":"
 
@@ -97,12 +102,15 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/unrar.1
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-n libunrar -p /sbin/ldconfig
+%postun	-n libunrar -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc *.txt
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-%attr(755,root,root) %{_bindir}/*
 
 %files -n libunrar
 %defattr(644,root,root,755)
@@ -110,4 +118,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libunrar-devel
 %defattr(644,root,root,755)
-%{_libdir}/libunrar.so
+%attr(755,root,root) %{_libdir}/libunrar.so
