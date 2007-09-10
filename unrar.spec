@@ -1,18 +1,21 @@
 Summary:	unRAR - extract, test and view RAR archives
-Summary(pl):	unRAR - rozpakowuje, testuje i przegl╠da archiwa RAR
-Summary(pt_BR):	Descompressor de arquivos no formato .rar
-Summary(ru):	Распаковщик файлов .zip
-Summary(uk):	Розпаковувач файл╕в .zip
+Summary(pl.UTF-8):	unRAR - rozpakowuje, testuje i przeglд┘da archiwa RAR
+Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
+Summary(ru.UTF-8):	п═п╟я│п©п╟п╨п╬п╡я┴п╦п╨ я└п╟п╧п╩п╬п╡ .zip
+Summary(uk.UTF-8):	п═п╬п╥п©п╟п╨п╬п╡я┐п╡п╟я┤ я└п╟п╧п╩я√п╡ .zip
 Name:		unrar
-Version:	3.2.1
+Version:	3.7.8
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
+#Source0Download: http://www.rarlab.com/rar_add.htm
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5: f0a55e2666061f315aec04994f79ff45
+# Source0-md5:	b783f1932bc0c73902c6399f7c2c6f43
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
+URL:		http://www.rarlab.com/
 BuildRequires:	libstdc++-devel
+BuildRequires:	rpmbuild(macros) >= 1.167
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,50 +23,99 @@ The unRAR utility is a freeware program, distributed with source code
 and developed for extracting, testing and viewing the contents of
 archives created with the RAR archiver version 1.50 and above.
 
-%description -l pl
+%description -l pl.UTF-8
 UnRAR jest programem freeware, rozpowszechnianym wraz z kodem
-╪rСdЁowym, przeznaczonym do rozpakowywania, testowania oraz
-przegl╠dania zawarto╤ci archiwСw stworzonych przez program RAR w
-wersji 1.50 i wy©szej.
+е╨rцЁdе┌owym, przeznaczonym do rozpakowywania, testowania oraz
+przeglд┘dania zawartoе⌡ci archiwцЁw stworzonych przez program RAR w
+wersji 1.50 i wyе╪szej.
 
-%description -l pt_BR
-O programa unrar И utilizado para descompactar arquivos no formato
+%description -l pt_BR.UTF-8
+O programa unrar ц╘ utilizado para descompactar arquivos no formato
 ".rar".
 
-%description -l ru
-Unzip выдает список, проверяет целостность и извлекает файлы из
-архивов ZIP, довольно широко распространенных в мире DOS.
-Сопутствующая программа, zip, создает архивы ZIP. Обе программы
-совместимы с архивами созданными PKZIP и PKUNZIP от PKWARE для MS-DOS,
-но во многих случаях опции или умолчания отличаются.
+%description -l ru.UTF-8
+Unzip п╡я▀п╢п╟п╣я┌ я│п©п╦я│п╬п╨, п©я─п╬п╡п╣я─я▐п╣я┌ я├п╣п╩п╬я│я┌п╫п╬я│я┌я▄ п╦ п╦п╥п╡п╩п╣п╨п╟п╣я┌ я└п╟п╧п╩я▀ п╦п╥
+п╟я─я┘п╦п╡п╬п╡ ZIP, п╢п╬п╡п╬п╩я▄п╫п╬ я┬п╦я─п╬п╨п╬ я─п╟я│п©я─п╬я│я┌я─п╟п╫п╣п╫п╫я▀я┘ п╡ п╪п╦я─п╣ DOS.
+п║п╬п©я┐я┌я│я┌п╡я┐я▌я┴п╟я▐ п©я─п╬пЁя─п╟п╪п╪п╟, zip, я│п╬п╥п╢п╟п╣я┌ п╟я─я┘п╦п╡я▀ ZIP. п·п╠п╣ п©я─п╬пЁя─п╟п╪п╪я▀
+я│п╬п╡п╪п╣я│я┌п╦п╪я▀ я│ п╟я─я┘п╦п╡п╟п╪п╦ я│п╬п╥п╢п╟п╫п╫я▀п╪п╦ PKZIP п╦ PKUNZIP п╬я┌ PKWARE п╢п╩я▐ MS-DOS,
+п╫п╬ п╡п╬ п╪п╫п╬пЁп╦я┘ я│п╩я┐я┤п╟я▐я┘ п╬п©я├п╦п╦ п╦п╩п╦ я┐п╪п╬п╩я┤п╟п╫п╦я▐ п╬я┌п╩п╦я┤п╟я▌я┌я│я▐.
 
-%description -l uk
-Unzip вида╓ перел╕к, перев╕ря╓ ц╕л╕сн╕сть та видобува╓ файли з арх╕в╕в
-ZIP, досить широко розповсюджених у св╕т╕ DOS. В╕дпов╕дна програма,
-zip, створю╓ арх╕ви ZIP. Обидв╕ програми сум╕сн╕ з арх╕вами створеними
-PKZIP та PKUNZIP в╕д PKWARE для MS-DOS, але в багатьох випадках опц╕╖
-або умовчання в╕др╕зняються.
+%description -l uk.UTF-8
+Unzip п╡п╦п╢п╟я■ п©п╣я─п╣п╩я√п╨, п©п╣я─п╣п╡я√я─я▐я■ я├я√п╩я√я│п╫я√я│я┌я▄ я┌п╟ п╡п╦п╢п╬п╠я┐п╡п╟я■ я└п╟п╧п╩п╦ п╥ п╟я─я┘я√п╡я√п╡
+ZIP, п╢п╬я│п╦я┌я▄ я┬п╦я─п╬п╨п╬ я─п╬п╥п©п╬п╡я│я▌п╢п╤п╣п╫п╦я┘ я┐ я│п╡я√я┌я√ DOS. п▓я√п╢п©п╬п╡я√п╢п╫п╟ п©я─п╬пЁя─п╟п╪п╟,
+zip, я│я┌п╡п╬я─я▌я■ п╟я─я┘я√п╡п╦ ZIP. п·п╠п╦п╢п╡я√ п©я─п╬пЁя─п╟п╪п╦ я│я┐п╪я√я│п╫я√ п╥ п╟я─я┘я√п╡п╟п╪п╦ я│я┌п╡п╬я─п╣п╫п╦п╪п╦
+PKZIP я┌п╟ PKUNZIP п╡я√п╢ PKWARE п╢п╩я▐ MS-DOS, п╟п╩п╣ п╡ п╠п╟пЁп╟я┌я▄п╬я┘ п╡п╦п©п╟п╢п╨п╟я┘ п╬п©я├я√я≈
+п╟п╠п╬ я┐п╪п╬п╡я┤п╟п╫п╫я▐ п╡я√п╢я─я√п╥п╫я▐я▌я┌я▄я│я▐.
+
+%package -n libunrar
+Summary:	Library for extracting RAR archive
+Summary(pl.UTF-8):	Biblioteka do rozpakowywania archiwцЁw RAR
+Group:		Libraries
+
+%description -n libunrar
+Library for extracting RAR archive.
+
+%description -n libunrar -l pl.UTF-8
+Biblioteka do rozpakowywania archiwцЁw RAR.
+
+%package -n libunrar-devel
+Summary:	Development files for libunrar
+Summary(pl.UTF-8):	Pliki programistyczne biblioteki libunrar
+Group:		Development/Libraries
+Requires:	libunrar = %{version}-%{release}
+
+%description -n libunrar-devel
+Development files for libunrar.
+
+%description -n libunrar-devel -l pl.UTF-8
+Pliki programistyczne biblioteki libunrar.
 
 %prep
 %setup -q -n unrar
 
 %build
-%{__make} -f makefile.unix CC=%{__cc} CXX=%{__cxx} CXXFLAGS="%{rpmcflags}"
+install -d done
+%{__make} -f makefile.unix clean
+%{__make} -f makefile.unix \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcxxflags}" \
+	STRIP=":"
+%{__make} -f makefile.unix clean
+%{__make} -f makefile.unix lib \
+	CC="%{__cc}" \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcxxflags} -fPIC" \
+	LDFLAGS="%{rpmldflags} -Wl,-soname -Wl,libunrar.so.%{version}" \
+	STRIP=":"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/{man1,pl/man1}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/{man1,pl/man1}}
 
 install unrar $RPM_BUILD_ROOT%{_bindir}
+install libunrar.so $RPM_BUILD_ROOT%{_libdir}/libunrar.so.%{version}
+ln -s libunrar.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libunrar.so
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
 install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/pl/man1/unrar.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-n libunrar -p /sbin/ldconfig
+%postun	-n libunrar -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc *.txt
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
 %lang(pl) %{_mandir}/pl/man1/*
-%attr(755,root,root) %{_bindir}/*
+
+%files -n libunrar
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libunrar.so.*.*
+
+%files -n libunrar-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libunrar.so
