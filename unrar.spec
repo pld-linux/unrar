@@ -79,13 +79,13 @@ install -d done
 %{__make} -f makefile.unix \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CXXFLAGS="%{rpmcxxflags}" \
+	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
 	STRIP=":"
 %{__make} -f makefile.unix clean
 %{__make} -f makefile.unix lib \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
-	CXXFLAGS="%{rpmcxxflags} -fPIC" \
+	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags} -fPIC" \
 	LDFLAGS="%{rpmldflags} -Wl,-soname -Wl,libunrar.so.%{version}" \
 	STRIP=":"
 
