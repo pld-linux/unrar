@@ -13,7 +13,6 @@ Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
 # Source0-md5:	875688e6a144a3f75d2a6a0da3e43f8b
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
-Patch0:		%{name}-lparam.patch
 URL:		http://www.rarlab.com/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.167
@@ -73,7 +72,6 @@ Pliki programistyczne biblioteki libunrar.
 
 %prep
 %setup -q -n unrar
-%patch0 -p1
 
 %build
 install -d done
