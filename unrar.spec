@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
 Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
-Version:	4.2.4
+Version:	5.0.2
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: http://www.rarlab.com/rar_add.htm
 Source0:	http://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5:	8ea9d1b4139474b282d76e627a2de3e4
+# Source0-md5:	f8295f66c8323c73c286fd8eef63b235
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 URL:		http://www.rarlab.com/
@@ -75,18 +75,18 @@ Pliki programistyczne biblioteki libunrar.
 
 %build
 install -d done
-%{__make} -f makefile.unix clean
-%{__make} -f makefile.unix \
+%{__make} -f makefile clean
+%{__make} -f makefile \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
 	STRIP=":"
-%{__make} -f makefile.unix clean
-%{__make} -f makefile.unix lib \
+%{__make} -f makefile clean
+%{__make} -f makefile lib \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags} -fPIC" \
-	LDFLAGS="%{rpmldflags} -Wl,-soname -Wl,libunrar.so.%{version}" \
+	LDFLAGS="%{rpmldflags} -pthread -Wl,-soname -Wl,libunrar.so.%{version}" \
 	STRIP=":"
 
 %install
