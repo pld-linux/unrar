@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
 Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
-Version:	5.7.4
+Version:	5.8.2
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: https://www.rarlab.com/rar_add.htm
 Source0:	https://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5:	7b6a2bebe2a0c096f353008c40644be7
+# Source0-md5:	ea4fb97d01088c4790ec549b2624f760
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 URL:		https://www.rarlab.com/
