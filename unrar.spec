@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
 Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
-Version:	5.9.2
+Version:	5.9.3
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: https://www.rarlab.com/rar_add.htm
 Source0:	https://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5:	67148484b431aea1329653b885ffcdf2
+# Source0-md5:	f001a80828e97d9beccff9d3376012ee
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 URL:		https://www.rarlab.com/
@@ -81,6 +81,7 @@ install -d done
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
 	STRIP=":"
+mv unrar unrar.done
 %{__make} -f makefile clean
 %{__make} -f makefile lib \
 	CC="%{__cc}" \
@@ -93,7 +94,7 @@ install -d done
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/{man1,pl/man1}}
 
-install unrar $RPM_BUILD_ROOT%{_bindir}
+install unrar.done $RPM_BUILD_ROOT%{_bindir}/unrar
 install libunrar.so $RPM_BUILD_ROOT%{_libdir}/libunrar.so.%{version}
 ln -s libunrar.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libunrar.so
 install %{SOURCE1} $RPM_BUILD_ROOT%{_mandir}/man1
