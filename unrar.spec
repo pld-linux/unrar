@@ -75,15 +75,15 @@ Pliki programistyczne biblioteki libunrar.
 
 %build
 install -d done
-%{__make} -f makefile clean
-%{__make} -f makefile \
+%{__make} -j1 -f makefile clean
+%{__make} -j1 -f makefile \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
 	STRIP=":"
-mv unrar unrar.done
-%{__make} -f makefile clean
-%{__make} -f makefile lib \
+%{__mv} unrar unrar.done
+%{__make} -j1 -f makefile clean
+%{__make} -j1 -f makefile lib \
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags} -fPIC" \
