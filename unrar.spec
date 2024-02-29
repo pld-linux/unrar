@@ -5,7 +5,7 @@ Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
 Version:	7.0.7
-Release:	1
+Release:	2
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: https://www.rarlab.com/rar_add.htm
@@ -13,6 +13,7 @@ Source0:	https://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
 # Source0-md5:	596c964288608be4b4b6502e910518d2
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
+Patch0:		sse.patch
 URL:		https://www.rarlab.com/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.167
@@ -72,6 +73,7 @@ Pliki programistyczne biblioteki libunrar.
 
 %prep
 %setup -q -n unrar
+%patch0 -p1
 
 %build
 install -d done

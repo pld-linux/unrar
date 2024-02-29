@@ -1,0 +1,11 @@
+--- unrar/os.hpp.orig	2024-02-26 10:03:52.000000000 +0100
++++ unrar/os.hpp	2024-02-29 12:10:24.775317293 +0100
+@@ -143,7 +143,7 @@
+ #include <locale.h>
+ 
+ #ifdef __GNUC__
+-  #if defined(__i386__) || defined(__x86_64__)
++  #if ( defined(__i386__) && defined(__SSE__) ) || defined(__x86_64__)
+     #include <x86intrin.h>
+     
+     #define USE_SSE
