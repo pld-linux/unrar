@@ -73,7 +73,7 @@ Pliki programistyczne biblioteki libunrar.
 
 %prep
 %setup -q -n unrar
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 install -d done
