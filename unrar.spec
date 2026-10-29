@@ -4,13 +4,13 @@ Summary(pt_BR.UTF-8):	Descompressor de arquivos no formato .rar
 Summary(ru.UTF-8):	Распаковщик файлов .zip
 Summary(uk.UTF-8):	Розпаковувач файлів .zip
 Name:		unrar
-Version:	7.2.4
+Version:	7.2.7
 Release:	1
 License:	Freeware
 Group:		Applications/Archiving
 #Source0Download: https://www.rarlab.com/rar_add.htm
 Source0:	https://www.rarlab.com/rar/%{name}src-%{version}.tar.gz
-# Source0-md5:	4c2c8cae2a8f1dabd8bf150848253248
+# Source0-md5:	bc831af7fce42b9440b816b5a790604e
 Source1:	%{name}.1
 Source2:	%{name}.1.pl
 Patch0:		sse.patch
@@ -82,6 +82,7 @@ install -d done
 	CC="%{__cc}" \
 	CXX="%{__cxx}" \
 	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
+	LDFLAGS="%{rpmldflags} -pthread" \
 	STRIP=":"
 %{__mv} unrar unrar.done
 %{__make} -j1 -f makefile clean
